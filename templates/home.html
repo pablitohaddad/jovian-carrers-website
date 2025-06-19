@@ -10,29 +10,37 @@
                 height: 360px;
                 object-fit: cover;
                 width: 100%;
+                margin-bottom: 16px;
             }
         </style>
     </head>
     
     <body>
-        <div class="container">
-        <h1 class="text-center mt-4 mb-2">Jovian Careers</h1>
+        {% include 'nav.html' %}
         <img class="img-fluid" id="banner" src="/static/banner.jpg" alt="Banner" height="320">
+    <div class="container">
         <h2 class="text-center mt-2 mb-4" >About Jovian</h2>
-        <p class="lead">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque odit earum quas perspiciatis nihil minus nisi id in inventore qui. Repellat aperiam id enim exercitationem nostrum saepe adipisci maiores totam.
-        </p>
-        <h2 class="text-center">Open Positions</h2>
-        <div>
-            {% for job in jobs %}
-                {%include 'jobitem.html' %}
-            {% endfor %}
+        <div class="row" style="margin-bottom: 16px;">
+            <div class="col-md-6">
+                <p class="lead">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque odit earum quas perspiciatis nihil minus nisi id in inventore qui. Repellat aperiam id enim exercitationem nostrum saepe adipisci maiores totam.
+                </p>
+            </div>
+            <div class="d-none d-md-block col-md-6">
+                <img src="static/people.jpg" alt="people working" style="height: 320px; border-radius: 4px  ;">
+            </div>
+            <h2 class="text-center">Open Positions</h2>
+            <div>
+                {% for job in jobs %}
+                    {%include 'jobitem.html' %}
+                {% endfor %}
+            </div>
+            <div class="text-center">
+                <a href=" mailto:pablitohaddad@gmail.com?subject=Contact%20US&body=Your%20question%3A%0D%0A%0D%0AMy%20name%3A " class="btn btn-primary btn-lg">Contact US</a>
+                <p class="mt-4">Copyright 2022. PABLO HADAD</p>    
+            </div>
         </div>
-        <div class="text-center">
-            <button class="btn btn-primary btn-lg">Contact US</button>
-            <p class="mt-4">Copyright 2022. PABLO HADAD</p>    
-        </div>
-        </div>
-
+    {% include 'footer.html' %}
+    </div>
     </body>
 </html>
